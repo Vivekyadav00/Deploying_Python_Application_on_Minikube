@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: py-app-flaskr-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flaskr-test
+  template:
+    metadata:
+      labels:
+        app: flaskr-test
+    spec:
+      containers:
+      - name: flaskr-test
+        image: vicky006/flaskr:v1
+        ports:
+        - containerPort: 5000
+
